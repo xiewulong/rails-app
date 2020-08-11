@@ -6,17 +6,15 @@ services:
       dockerfile: Dockerfile.development
     restart: unless-stopped
     ports:
-      - 3000:3000
+      - 3000
     volumes:
       - .:/app
-    # environment:
-    #   APP_MAILER_FROM: ${APP_MAILER_FROM}
-    #   APP_MAILER_SMTP_ADDRESS: ${APP_MAILER_SMTP_ADDRESS}
-  # mongo:
-  #   image: mongo:latest
+    # environment: {}
+  # mariadb:
+  #   image: mariadb:latest
   #   restart: unless-stopped
   #   ports:
-  #     - 27017
+  #     - 3306
   # redis:
   #   image: redis:latest
   #   restart: unless-stopped
