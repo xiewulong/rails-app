@@ -15,7 +15,8 @@ if [ -f "rails_new.sh" ]; then
   rm -rf rails_new.sh
   docker run --rm -v $CSD:/app xiewulong/rails:alpine sh -c "cd /app && chown $UID:$GID -R ."
 else
-  docker-compose exec app sh -c "rails $@ && chown $USER:$GID -R ."
+  docker-compose exec app rails $@
+  docker-compose exec app chown $UID:$GID -R .
 fi
 
 cd $CWD
