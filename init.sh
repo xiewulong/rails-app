@@ -13,4 +13,4 @@ bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
 adduser -DH xiewulong
 chown xiewulong:xiewulong -R .
 
-rm -rf init.sh
+rm -rf docker-compose.init.yml init.sh

@@ -6,17 +6,12 @@ services:
       dockerfile: Dockerfile.development
     restart: unless-stopped
     ports:
-      - 3000
+      - 3000:3000
     volumes:
       - .:/app
     # environment:
     #   APP_MAILER_FROM: ${APP_MAILER_FROM}
     #   APP_MAILER_SMTP_ADDRESS: ${APP_MAILER_SMTP_ADDRESS}
-  init:
-    image: xiewulong/rails:alpine
-    command: sh -c /app/init.sh
-    volumes:
-      - .:/app
   # mongo:
   #   image: mongo:latest
   #   restart: unless-stopped
