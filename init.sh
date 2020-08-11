@@ -1,5 +1,7 @@
 #/bin/sh
 
+# docker run --rm -v $(cd `dirname $0`; pwd):/app xiewulong/rails:alpine sh -c /app/init.sh
+
 set -ex
 
 gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
@@ -13,4 +15,4 @@ bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
 adduser -DH xiewulong
 chown xiewulong:xiewulong -R .
 
-rm -rf docker-compose.init.yml init.sh
+rm -rf $0
