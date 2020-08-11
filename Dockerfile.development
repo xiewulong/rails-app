@@ -4,9 +4,9 @@ RUN set -ex && \
     sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g" /etc/apk/repositories && \
     apk add --no-cache --virtual .build-deps && \
     apk add --no-cache \
-      mysql-dev \
+      # mysql-dev \
       # nodejs \
-      # postgresql-client \
+      postgresql-client \
       # sqlite-dev \
       tzdata \
       # yarn \

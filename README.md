@@ -1,24 +1,13 @@
-# README
+# Rails app template
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails应用模板
 
-Things you may want to cover:
+<details open>
 
-* Ruby version
+* [License](#license)
 
-* System dependencies
+</details>
 
-* Configuration
+## License
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MIT - [xiewulong](https://github.com/xiewulong)
