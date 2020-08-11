@@ -1,19 +1,17 @@
-FROM ruby:alpine
+FROM xiewulong/rails:alpine
 
 RUN set -ex && \
-    sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g" /etc/apk/repositories && \
-    apk add --no-cache --virtual .build-deps \
-      build-base \
+    # sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g" /etc/apk/repositories && \
+    apk add --no-cache --virtual .build-deps && \
+    apk add --no-cache \
       # mysql-client \
-      nodejs \
+      # nodejs \
       # postgresql-client \
-      sqlite-dev \
-      tzdata \
-      yarn \
+      # sqlite-dev \
+      # yarn \
     && \
-    gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ && \
-    bundle config mirror.https://rubygems.org https://gems.ruby-china.com && \
-    gem install rails && \
+    # gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ && \
+    # bundle config mirror.https://rubygems.org https://gems.ruby-china.com && \
     apk del .build-deps
 
 CMD bundle && rails s -b 0.0.0.0
