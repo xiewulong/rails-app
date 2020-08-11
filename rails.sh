@@ -1,14 +1,10 @@
 #/bin/sh
 
-USERNAME=username
-
 # Current work directory
 CWD=`pwd`
 
 # Current script directory
 CSD=$(cd `dirname $0`; pwd)
-
-set -ex
 
 cd $CSD
 
@@ -17,6 +13,6 @@ if [ -f "rails_new.sh" ]; then
   rm -rf rails_new.sh
 fi
 
-docker run --rm -v $CSD:/app xiewulong/rails:alpine sh -c "cd /app && adduser -DH $USERNAME && chown $USERNAME:$USERNAME -R ."
+docker run --rm -v $CSD:/app xiewulong/rails:alpine sh -c "cd /app && rails $@ && adduser -DH $USER && chown $USER:$USER -R ."
 
 cd $CWD
