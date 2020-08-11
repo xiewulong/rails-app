@@ -7,7 +7,8 @@ RUN set -ex && \
       # mysql-client \
       nodejs \
       # postgresql-client \
-      sqlite \
+      sqlite-dev \
+      tzdata \
       yarn \
     && \
     gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ && \
@@ -15,9 +16,9 @@ RUN set -ex && \
     gem install rails && \
     apk del .build-deps
 
-EXPOSE 3000
+CMD bundle && rails s -b 0.0.0.0
 
-CMD [ "rails", "s", "-b", "0.0.0.0" ]
+EXPOSE 3000
 
 WORKDIR /app
 

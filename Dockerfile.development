@@ -1,27 +1,22 @@
 FROM ruby:alpine
 
-# ARG USERNAME=xiewulong
-# ARG APP_PORT=3000
+RUN set -ex && \
+    sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g" /etc/apk/repositories && \
+    apk add --no-cache \
+      build-base \
+      # mysql-client \
+      nodejs \
+      # postgresql-client \
+      sqlite-dev \
+      tzdata \
+      yarn \
+    && \
+    gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ && \
+    bundle config mirror.https://rubygems.org https://gems.ruby-china.com && \
+    gem install rails
 
-# RUN set -ex && \
-#     # adduser -DH $USERNAME && \
-#     sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g" /etc/apk/repositories && \
-#     apk add --no-cache \
-#       build-base \
-#       # mysql-client \
-#       nodejs \
-#       # postgresql-client \
-#       sqlite-dev \
-#       yarn \
-#     && \
-#     gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ && \
-#     bundle config mirror.https://rubygems.org https://gems.ruby-china.com && \
-#     gem install rails
+CMD bundle && rails s -b 0.0.0.0
 
-# CMD bundle && rails s -b 0.0.0.0 -p $APP_PORT
+EXPOSE 3000
 
-# EXPOSE $APP_PORT
-
-# USER $USER
-
-# WORKDIR /app
+WORKDIR /app
