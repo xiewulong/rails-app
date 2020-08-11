@@ -7,7 +7,8 @@ RUN set -ex && \
       # mysql-client \
       # nodejs \
       # postgresql-client \
-      # sqlite-dev \
+      sqlite-dev \
+      tzdata \
       # yarn \
     && \
     # gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ && \

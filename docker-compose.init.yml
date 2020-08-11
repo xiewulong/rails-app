@@ -1,7 +1,0 @@
-version: '3'
-services:
-  init:
-    image: xiewulong/rails:alpine
-    command: sh -c /app/init.sh
-    volumes:
-      - .:/app
