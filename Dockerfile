@@ -15,10 +15,12 @@ RUN set -ex && \
     # bundle config mirror.https://rubygems.org https://gems.ruby-china.com && \
     apk del .build-deps
 
-CMD bundle && rails s -b 0.0.0.0 -p 3000
+CMD rails s -b 0.0.0.0 -p 3000
 
 EXPOSE 3000
 
 WORKDIR /app
 
 ADD . .
+
+RUN bundle

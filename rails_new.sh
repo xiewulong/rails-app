@@ -11,6 +11,7 @@ rails new . \
       --force \
       --skip-action-mailbox \
       --skip-action-mailer \
+      --skip-active-storage \
       --skip-bundle
 
 bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
