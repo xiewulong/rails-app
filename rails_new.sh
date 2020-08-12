@@ -11,10 +11,6 @@ rails new . \
       --force \
       --skip-action-mailbox \
       --skip-action-mailer \
-      --skip-action-cable \
-      --skip-bundle \
-      --skip-sprockets \
-      --skip-spring \
-      --skip-turbolinks
+      --skip-bundle
 
 bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
