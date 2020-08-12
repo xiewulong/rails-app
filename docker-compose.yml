@@ -11,12 +11,25 @@ services:
       - .:/app
     # environment: {}
   # mariadb:
-  #   image: mariadb:latest
+  #   image: mariadb:${MARIADB_IMAGE_TAG_NAME:-latest}
   #   restart: unless-stopped
   #   ports:
   #     - 3306
+  #   command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: app
+  #     MYSQL_USER: app_user
+  #     MYSQL_PASSWORD: app_password
+  # postgres:
+  #   image: postgres:${POSTGRES_IMAGE_TAG_NAME:-alpine}
+  #   restart: unless-stopped
+  #   ports:
+  #     - 5432
+  #   environment:
+  #     POSTGRES_PASSWORD: postgres
   # redis:
-  #   image: redis:latest
+  #   image: redis:${REDIS_IMAGE_TAG_NAME:-alpine}
   #   restart: unless-stopped
   #   ports:
   #     - 6379
