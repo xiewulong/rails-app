@@ -5,5 +5,15 @@ bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 
 cd `dirname $0`
 
-rails new . --api -B -d sqlite3   # mysql/postgresql/sqlite3/oracle/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc
+rails new . \
+  --api \
+  --database=sqlite3  # mysql/postgresql/sqlite3/oracle/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc
+  --skip-action-mailbox \
+  --skip-action-mailer \
+  # --skip-action-cable \
+  --skip-bundle \
+  # --skip-sprockets \
+  # --skip-spring \
+  # --skip-turbolinks \
+
 bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
