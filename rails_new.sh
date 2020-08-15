@@ -9,6 +9,7 @@ rails new . \
       --api \
       --database=sqlite3 \
       --force \
+      --skip-action-cable \
       --skip-action-mailbox \
       --skip-action-mailer \
       --skip-active-storage \
