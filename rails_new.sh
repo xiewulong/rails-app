@@ -1,7 +1,7 @@
 #/bin/sh
 
-gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
-bundle config mirror.https://rubygems.org https://gems.ruby-china.com
+# gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+# bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 
 cd `dirname $0`
 

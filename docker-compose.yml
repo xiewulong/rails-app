@@ -9,7 +9,8 @@ services:
       - 3000
     volumes:
       - .:/app
-    # environment: {}
+    environment:
+      RAILS_ENV: development
   # mariadb:
   #   image: mariadb:${MARIADB_IMAGE_TAG_NAME:-latest}
   #   restart: unless-stopped
