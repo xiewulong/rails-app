@@ -8,7 +8,7 @@ cd `dirname $0`
 rails new . \
       --api \
       --database=sqlite3 \
-      --force \
+      --skip \
       --skip-action-cable \
       --skip-action-mailbox \
       --skip-action-mailer \
