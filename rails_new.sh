@@ -13,6 +13,7 @@ rails new . \
       --skip-action-mailbox \
       --skip-action-mailer \
       --skip-active-storage \
-      --skip-bundle
+      --skip-bundle \
+      --skip-webpack-install
 
 bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
