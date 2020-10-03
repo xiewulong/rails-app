@@ -2,8 +2,7 @@
   "name": "rails-app",
   "private": true,
   "scripts": {
-    "apidoc": "rm -rf ./public/apidoc && mkdir -p ./public/apidoc && apidoc -i ./app/controllers/ -o ./public/apidoc/",
-    "swagger": "rm -rf ./public/swagger && mkdir -p ./public/swagger && cp -r ./node_modules/swagger-ui-dist/* ./public/swagger/ && apidoc-swagger -i ./app/controllers/ -o ./public/swagger/ && sed -i 's/https:\\/\\/petstore.swagger.io\\/v2\\///g' ./public/swagger/index.html"
+    "doc": "rm -rf ./public/doc && mkdir -p ./public/doc && apidoc -i ./app/controllers/ -o ./public/doc/ && mkdir -p ./public/doc/swagger && cp -r ./node_modules/swagger-ui-dist/* ./public/doc/swagger/ && apidoc-swagger -i ./app/controllers/ -o ./public/doc/swagger/ && sed -i 's/https:\\/\\/petstore.swagger.io\\/v2\\///g' ./public/doc/swagger/index.html"
   },
   "dependencies": {
     "apidoc": "^0.25.0",
