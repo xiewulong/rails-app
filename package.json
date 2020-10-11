@@ -2,11 +2,28 @@
   "name": "rails-app",
   "private": true,
   "scripts": {
-    "doc": "rm -rf ./public/doc && mkdir -p ./public/doc && apidoc -i ./app/controllers/ -o ./public/doc/ && mkdir -p ./public/doc/swagger && cp -r ./node_modules/swagger-ui-dist/* ./public/doc/swagger/ && apidoc-swagger -i ./app/controllers/ -o ./public/doc/swagger/ && sed -i 's/https:\\/\\/petstore.swagger.io\\/v2\\///g' ./public/doc/swagger/index.html"
+    "doc": "rm -rf ./public/doc && mkdir -p ./public/doc && apidoc -i ./app/controllers/ -o ./public/doc/"
   },
   "dependencies": {
     "apidoc": "^0.25.0",
     "apidoc-swagger": "^0.3.2",
     "swagger-ui-dist": "^3.32.1"
+  },
+  "apidoc": {
+    "name": "Rails app",
+    "version": "0.1.0",
+    "description": "Api documentation",
+    "title": "Rails app",
+    "url" : "",
+    "sampleUrl": "http://localhost",
+    "header": {
+      "title": "",
+      "filename": ""
+    },
+    "footer": {
+      "title": "",
+      "filename": ""
+    },
+    "order": []
   }
 }
