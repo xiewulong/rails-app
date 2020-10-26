@@ -21,6 +21,7 @@ if [ -f "rails_new.sh" ]; then
 elif [ "$1" = "doc" ]; then
   docker run --rm -i -v $CSD:/app node:current-alpine sh -c "cd /app && npm i && npm run doc && chown $UID:$GID -R ./node_modules ./public/doc"
   # docker run --rm -i -v $CSD:/app node:current-alpine sh -c "cd /app && npm i --registry=https://registry.npm.taobao.org && npm run doc && chown $UID:$GID -R ./node_modules ./public/doc"
+  sed -i 's/articles.push({/var url_prefix=location.href.replace(\/\\\/doc\\\/.*$\/,"");fields.article.examples\&\&fields.article.examples.forEach(function(e){e.content=e.content.replace(\/http:\\\/\\\/localhost\/g,url_prefix)});fields.article.sampleRequest\&\&fields.article.sampleRequest.forEach(function(s){s.url=s.url.replace(\/^\\s+\/,url_prefix)});articles.push({/' ./public/doc/main.js
 else
   docker-compose exec app rails $@
   docker-compose exec app chown $UID:$GID -R .
